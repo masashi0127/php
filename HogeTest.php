@@ -9,6 +9,6 @@ class HogeTest extends PHPUnit_Framework_TestCase {
     function testFuga() {
         $fuga = new Fuga();
 
-        $this->assertTrue($fuga);
+        $this->assertTrue($fuga->index());
     }
 }
