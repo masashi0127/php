@@ -1,23 +1,23 @@
 language: php
 
 php:
-    - 5.3
-    - 5.4
-    - 5.5
-    - hhvm
+  - 5.3
+  - 5.4
+  - 5.5
+  - hhvm
 
 before_script:
-    - curl -s http://getcomposer.org/installer | php
-    - php composer.phar install --dev --prefer-source
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --prefer-source
 
 script:
-    - mkdir -p build/logs
-    - phpunit --coverage-clover build/logs/clover.xml --configuration tests/phpunit.xml tests
+  - mkdir -p build/logs
+  - phpunit --coverage-clover build/logs/clover.xml --configuration tests/phpunit.xml tests
 
 after_script:
-    - php vendor/bin/coveralls -v
+  - php vendor/bin/coveralls -v
 
 notifications:
-    emails:
-    on_success: never
-    on_failure: never
+  slack:
+    rooms:
+      secure: "BHbcBgeuzqdY3G7VGfYOiw4hMuWBrXPAIM72vdZYgIU7ZPLnS1BiR9HVCMR5spmdJXi8ty+4FasBShmUwb+a47O7eiAlP1B5zceKtdeNISkq2+ntGR3FAcs0v6dXj09NyYeadIXb2Qr901kJ9YA6ad6JiaZnXIKIKvG8fuKa5MY="
