@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-    colors="true"
-    bootstrap="bootstrap.php">
-    <testsuite name="Hoge">
-        <directory>./</directory>
-    </testsuite>
-</phpunit>
